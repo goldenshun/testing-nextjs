@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
+    "cypress": "cypress",
     "dev": "next",
     "lint": "eslint --ext .js .",
     "start": "next start"
@@ -24,8 +25,10 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.2",
+    "cypress": "3.4.1",
     "eslint": "5.5.0",
     "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-cypress": "2.6.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jest": "21.17.0",
     "eslint-plugin-jsx-a11y": "6.1.1",

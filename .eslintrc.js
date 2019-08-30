@@ -1,6 +1,13 @@
 module.exports = {
   extends: ['airbnb'],
+  plugins: ['cypress'],
   parser: 'babel-eslint', // Allows us to use es7 features
+  env: {
+   browser: true,
+   node: true,
+   jest: true,
+   'cypress/globals': true,
+ },
   rules: {
     'max-len': ['error', 150, 2, {
       ignoreUrls: true,
