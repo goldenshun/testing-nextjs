@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const next = require('next');
+const robots = require('express-robots-txt');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -13,6 +14,8 @@ app.prepare().then(() => {
   server.use(helmet.hsts({
     maxAge: 5184000, // 60 days
   }));
+
+  server.use(robots({ UserAgent: '*', Disallow: '/' }));
 
   server.get('*', (req, res) => handle(req, res));
 
