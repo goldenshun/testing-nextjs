@@ -7,9 +7,9 @@
   "scripts": {
     "build": "next build",
     "cypress": "cypress",
-    "dev": "next",
+    "dev": "node server.js",
     "lint": "eslint --ext .js .",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,8 @@
   "license": "MIT",
   "homepage": "https://github.com/goldenshun/testing-nextjs#readme",
   "dependencies": {
+    "express": "4.17.1",
+    "helmet": "3.20.1",
     "next": "9.0.2",
     "react": "16.8.6",
     "react-dom": "16.8.6"

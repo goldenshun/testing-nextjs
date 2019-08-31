@@ -1,10 +1,7 @@
 /* eslint-disable no-unused-expressions */
 context('Broken SSR', () => {
-  beforeEach(() => {
-    cy.visit('/broken-ssr');
-  });
-
   it('renders text', () => {
+    cy.visit('/broken-ssr');
     cy.contains('The path is /broken-ssr');
   });
 
