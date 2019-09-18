@@ -1,4 +1,4 @@
-describe('Security Headers', () => {
+context('Security Headers', () => {
   it('Should have a Strict-Transport-Security header', () => {
     cy.request('/').then((resp) => {
       const hsts = resp.headers['strict-transport-security'];
