@@ -15,6 +15,8 @@ app.prepare().then(() => {
     maxAge: 5184000, // 60 days
   }));
 
+  server.use(helmet.frameguard({ action: 'deny' }));
+
   server.use(robots({ UserAgent: '*', Disallow: '/' }));
 
   server.get('*', (req, res) => handle(req, res));
