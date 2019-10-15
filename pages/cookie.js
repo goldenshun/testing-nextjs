@@ -4,11 +4,13 @@ const Cookie = () => (
   </div>
 );
 
-Cookie.getInitialProps = ({ res }) => {
+Cookie.getInitialProps = ({ req, res }) => {
   if (res) {
     res.cookie('TOKEN', '12345', {
       path: '/',
       httpOnly: true,
+      secure: !req.host.includes('localhost'),
+      sameSite: 'Lax',
     });
   }
   return {};
